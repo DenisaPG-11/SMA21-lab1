@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAC0C0"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tName"
+        android:layout_width="204dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="164dp"
+        android:hint="The output for this app"
+        android:textColorHint="#292929"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/bClick"
+        android:layout_width="259dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="60dp"
+        android:backgroundTint="#AC1B1B"
+        android:text="Say Hello"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/tName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/eName"
+        android:layout_width="236dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="Your name"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textColorHint="#292929"
+        app:layout_constraintBottom_toTopOf="@+id/bClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.748" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
