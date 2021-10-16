@@ -3,5 +3,11 @@
     <string name="dialog_message">Are you sure?</string>
     <string name="yes">Yes!</string>
     <string name="cancel">Never mind</string>
-
+    <string-array name="spinner_array">\
+        <item>Color</item>
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Black</item>
+    </string-array>
 </resources>
