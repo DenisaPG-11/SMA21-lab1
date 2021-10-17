@@ -22,24 +22,25 @@
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.402" />
+        app:layout_constraintVertical_bias="0.531" />
 
     <Button
         android:id="@+id/bClick"
-        android:layout_width="166dp"
-        android:layout_height="54dp"
+        android:layout_width="153dp"
+        android:layout_height="47dp"
         android:backgroundTint="#AC1B1B"
         android:text="Say Hello"
         android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.395" />
+        app:layout_constraintVertical_bias="0.318" />
 
     <Button
         android:id="@+id/bPopup"
@@ -53,12 +54,12 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tName"
-        app:layout_constraintVertical_bias="0.159" />
+        app:layout_constraintVertical_bias="0.061" />
 
     <EditText
         android:id="@+id/eName"
-        android:layout_width="154dp"
-        android:layout_height="49dp"
+        android:layout_width="151dp"
+        android:layout_height="43dp"
         android:layout_marginEnd="190dp"
         android:ems="10"
         android:hint="Your name"
@@ -69,10 +70,10 @@
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.346"
+        app:layout_constraintHorizontal_bias="0.371"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
+        app:layout_constraintVertical_bias="0.316" />
 
     <Spinner
         android:id="@+id/spinner"
@@ -86,6 +87,42 @@
         app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.765" />
+        app:layout_constraintVertical_bias="0.801" />
+
+    <LinearLayout
+        style="android:style/ButtonBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eName"
+        app:layout_constraintVertical_bias="0.104">
+
+        <Button
+            android:id="@+id/bShare"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#A659B3"
+            android:text="Share"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/bSearch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="33dp"
+            android:layout_weight="1"
+            android:backgroundTint="#A659B3"
+            android:text="Search"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
