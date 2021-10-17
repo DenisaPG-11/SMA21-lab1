@@ -4,9 +4,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.widget.AdapterView;
@@ -23,17 +26,25 @@ import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Toast;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 public class MainActivity extends AppCompatActivity {
 
     Button bClick;
     Button bPopup;
+    Button closePopupBtn;
+    Button bSearch, bShare;
+
     EditText eName;
+
     TextView tName;
     TextView popup_text;
+
     ConstraintLayout main_page;
-    Button closePopupBtn;
 
     AlertDialog.Builder builder;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +59,14 @@ public class MainActivity extends AppCompatActivity {
         tName = findViewById(R.id.tName);
 
         builder = new AlertDialog.Builder(this);
+
+        bClick.setOnClickListener(v -> {
+            String message = "Hello, " + eName.getText().toString() + "!";
+            tName.setText(message);
+
+        });
+
+        //4 -> task 1
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
@@ -87,12 +106,6 @@ public class MainActivity extends AppCompatActivity {
 
                 // sometimes you need nothing here
             }
-        });
-
-        bClick.setOnClickListener(v -> {
-            String message = "Hello, " + eName.getText().toString() + "!";
-            tName.setText(message);
-
         });
 
         bPopup.setOnClickListener(new View.OnClickListener() {
@@ -151,6 +164,41 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        // 6 -> task2
+
+        bSearch = findViewById(R.id.bSearch);
+        bShare = findViewById(R.id.bShare);
+
+        bSearch.setOnClickListener(v -> {
+
+            try {
+                String escapedQuery = URLEncoder.encode(eName.getText().toString(), "UTF-8");
+                Uri url_search = Uri.parse("https://www.google.com/search?q=" + escapedQuery);
+
+                Intent openBrowser = new Intent(Intent.ACTION_VIEW, url_search);
+                startActivity(openBrowser);
+
+            }  catch (UnsupportedEncodingException e) {
+                throw new IllegalStateException(e.getMessage(), e);
+            }
+
+        });
+
+        //adtion _ send
+        bShare.setOnClickListener(v -> {
+            Intent shareEName = new Intent(Intent.ACTION_SEND);
+            shareEName.putExtra(Intent.EXTRA_TEXT, eName.getText().toString());
+            shareEName.setType("text/plain");
+
+            Intent receiver = new Intent(this, ApplicationSelectorReceiver.class);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, receiver, PendingIntent.FLAG_UPDATE_CURRENT);
+            Intent chooser = Intent.createChooser(shareEName, null, pendingIntent.getIntentSender());
+            startActivity(chooser);
+
+        });
+
+
     }
 
 
