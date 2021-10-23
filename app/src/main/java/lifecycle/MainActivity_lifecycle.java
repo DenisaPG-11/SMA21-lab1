@@ -1,7 +1,8 @@
 package lifecycle;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,30 +10,23 @@ import com.example.laborator1_sma.R;
 
 public class MainActivity_lifecycle extends AppCompatActivity {
 
-    Button buttonA, buttonB, buttonC;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.lifecycle_layout);
 
+    }
 
-        buttonA = findViewById(R.id.buttonA);
-        buttonB = findViewById(R.id.buttonB);
-        buttonC = findViewById(R.id.buttonC);
+    public void clicked (View view ){
+        switch (view.getId()){
+            case R.id.buttonA:
+                startActivity(new Intent(this, ActivityA.class));
+            case R.id.buttonB:
+                startActivity(new Intent(this, ActivityB.class));
+            case R.id.buttonC:
+                startActivity(new Intent(this, ActivityC.class));
+        }
 
-
-        buttonA.setOnClickListener(v -> {
-
-        });
-
-        buttonB.setOnClickListener(v -> {
-
-        });
-
-        buttonC.setOnClickListener(v -> {
-
-        });
     }
 }
