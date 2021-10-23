@@ -1,18 +1,16 @@
 package com.example.laborator1_sma;
 
-
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class WebSearchActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-     //   setContentView(R.layout.webview_activity);
-
+        setContentView(R.layout.webview_activity);
 
     }
 
