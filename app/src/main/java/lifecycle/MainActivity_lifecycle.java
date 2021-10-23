@@ -20,11 +20,11 @@ public class MainActivity_lifecycle extends AppCompatActivity {
 
     public void clicked (View view ){
         switch (view.getId()){
-            case R.id.buttonA:
+            case R.id.start_a:
                 startActivity(new Intent(this, ActivityA.class));
-            case R.id.buttonB:
+            case R.id.start_b:
                 startActivity(new Intent(this, ActivityB.class));
-            case R.id.buttonC:
+            case R.id.start_c:
                 startActivity(new Intent(this, ActivityC.class));
         }
 
